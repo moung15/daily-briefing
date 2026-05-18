@@ -1,10 +1,12 @@
 name: Daily Briefing (Free)
 
-# 매일 오전 8시 KST = 오후 11시 UTC (전날)
+# 오전 8시 KST = 23시 UTC, 하지만 정각은 지연이 심함
+# 따라서 7:43 + 8:13 두 번 시도 (둘 중 하나는 반드시 8시 전후 도착)
 on:
   schedule:
-    - cron: '0 23 * * *'
-  workflow_dispatch:  # 수동 실행 가능
+    - cron: '43 22 * * *'   # 7:43 AM KST (1차, 메인)
+    - cron: '13 23 * * *'   # 8:13 AM KST (백업)
+  workflow_dispatch:
 
 jobs:
   generate:
@@ -15,15 +17,15 @@ jobs:
       id-token: write
     
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
-      - name: 📰 Generate briefing
+      - name: Generate briefing
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
@@ -35,25 +37,25 @@ jobs:
           PAGES_URL: ${{ secrets.PAGES_URL }}
         run: python briefing.py
       
-      - name: 💾 Commit changes
+      - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "📰 Daily briefing - $(TZ='Asia/Seoul' date +'%Y-%m-%d')"
+            git commit -m "📰 Daily briefing - $(TZ='Asia/Seoul' date +'%Y-%m-%d %H:%M')"
             git push
           fi
       
-      - name: 📤 Setup Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: 📦 Upload Pages artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
       
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
