@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 브리핑 · 2026-10-31</title>
+<meta name="theme-color" content="#1a1612">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Pretendard:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4ede0;--ink:#1a1612;--ink-soft:#4a3f33;--ink-light:#7a6a55;--seal-red:#a8231f;--line:rgba(26,22,18,0.18);--line-soft:rgba(26,22,18,0.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Noto Serif KR',Georgia,serif;line-height:1.7;}
+.container{max-width:1280px;margin:0 auto;padding:36px 28px 60px;}
+.masthead{border-top:4px double var(--ink);border-bottom:1px solid var(--ink);padding:18px 0 14px;margin-bottom:8px;}
+.masthead-top{display:flex;justify-content:space-between;font-family:'Pretendard',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px;flex-wrap:wrap;gap:12px;}
+.title-block{text-align:center;}
+.eyebrow{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;letter-spacing:0.3em;color:var(--ink-light);text-transform:uppercase;margin-bottom:4px;}
+.masthead h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(38px,6vw,64px);letter-spacing:-0.02em;line-height:1;margin:4px 0;}
+.masthead h1 .accent{color:var(--seal-red);}
+.masthead-subtitle{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:6px;}
+.masthead-bottom{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:'Pretendard',sans-serif;font-size:12px;color:var(--ink-soft);flex-wrap:wrap;gap:12px;}
+.hero{background:var(--ink);color:var(--paper);padding:36px 40px;margin:24px 0 32px;position:relative;overflow:hidden;}
+.hero-content{position:relative;z-index:1;}
+.hero-eyebrow{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:#ffb8b5;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:12px;}
+.hero h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(24px,3vw,32px);line-height:1.3;margin-bottom:14px;}
+.hero a.hero-link{color:inherit;text-decoration:none;}
+.hero p{font-family:'Pretendard',sans-serif;font-size:14px;line-height:1.7;opacity:0.85;max-width:800px;}
+.hero .hero-meta{font-family:'Pretendard',sans-serif;font-size:11px;color:#ffb8b5;letter-spacing:0.1em;margin-top:14px;text-transform:uppercase;opacity:0.7;}
+.news-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0;}
+.category{padding:28px 26px;border:1px solid var(--line);margin:-0.5px;background:var(--paper);display:flex;flex-direction:column;}
+.category:nth-child(1){grid-column:span 7;background:rgba(168,35,31,0.04);}
+.category:nth-child(2){grid-column:span 5;}
+.category:nth-child(3),.category:nth-child(4),.category:nth-child(5){grid-column:span 4;}
+.category:nth-child(6),.category:nth-child(7){grid-column:span 6;}
+.category:nth-child(8){grid-column:span 5;}
+.category:nth-child(9){grid-column:span 4;}
+.category:nth-child(10){grid-column:span 3;}
+.category:nth-child(11){grid-column:span 4;}
+.category:nth-child(12){grid-column:span 8;}
+.cat-header{display:flex;justify-content:space-between;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid var(--ink);}
+.cat-title{display:flex;align-items:baseline;gap:10px;}
+.cat-num{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--ink-light);}
+.cat-name{font-family:'Noto Serif KR',serif;font-weight:800;font-size:22px;}
+.cat-name .han{font-size:14px;color:var(--seal-red);font-weight:700;margin-left:4px;vertical-align:super;}
+.cat-en{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:var(--ink-light);margin-top:4px;}
+.cat-icon{font-size:22px;color:var(--ink-light);}
+.news-item{padding:14px 0;border-bottom:1px dotted var(--line-soft);}
+.news-item a{color:inherit;text-decoration:none;display:block;}
+.news-item a:hover .news-headline{color:var(--seal-red);}
+.news-headline{font-family:'Noto Serif KR',serif;font-weight:700;color:var(--ink);font-size:15.5px;line-height:1.45;margin-bottom:6px;}
+.news-summary{font-family:'Noto Serif KR',serif;font-size:13px;color:var(--ink-soft);line-height:1.65;margin-bottom:6px;}
+.news-meta{font-family:'Pretendard',sans-serif;font-size:11px;color:var(--ink-light);display:flex;gap:8px;}
+.news-meta .source{font-weight:600;}
+@media(max-width:900px){.container{padding:20px 16px 50px;}.news-grid{display:block;}.category,.category:nth-child(n){grid-column:span 12;margin:0;}.masthead h1{font-size:42px;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="masthead">
+    <div class="masthead-top">
+      <span>2026년 10월 31일 (토)</span><span>Edition 304</span><span>Seoul · Korea</span>
+    </div>
+    <div class="title-block">
+      <div class="eyebrow">Your Personal Morning Press</div>
+      <h1>오늘의 <span class="accent">브리핑</span></h1>
+      <div class="masthead-subtitle">Twelve Categories — Free &amp; Auto-Generated</div>
+    </div>
+    <div class="masthead-bottom">
+      <div style="font-family:'IBM Plex Mono',monospace;">2026-10-31 10:47 KST</div>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;">Free. Daily. Delivered.</div>
+    </div>
+  </header>
+  
+        <section class="hero">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Today's Headline</div>
+            <a href="https://n.news.naver.com/mnews/article/214/0001532642?sid=102" target="_blank" class="hero-link">
+              <h2>1부 오늘의 주요뉴스</h2>
+            </a>
+            <p>◀ 앵커 ▶ 핼러윈인 오늘 전국 주요 번화가에 수많은 인파가 몰릴 것으로 예상됩니다. 정부는 경찰력을 투입하고 차량 통행을 조절하면서 안전 관리에 총력을 다하기로 했습니다. ◀ 앵커 ▶ 세계 최대 가상화폐...</p>
+            <div class="hero-meta">네이버뉴스 · 3시간 전</div>
+          </div>
+        </section>
+  <section class="news-grid">
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">I.</span>
+          <div>
+            <div class="cat-name">주요뉴스<span class="han">主要</span></div>
+            <div class="cat-en">Top Stories</div>
+          </div>
+        </div>
+        <span class="cat-icon">★</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/214/0001532642?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">1부 오늘의 주요뉴스</div>
+                <div class="news-summary">◀ 앵커 ▶ 핼러윈인 오늘 전국 주요 번화가에 수많은 인파가 몰릴 것으로 예상됩니다. 정부는 경찰력을 투입하고 차량 통행을 조절하면서 안전 관리에 총력을 다하기로 했습니다. ◀ 앵커 ▶ 세계 최대 가상화폐...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>3시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/055/0001399554?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">[모닝와이드] 오늘의 주요뉴스</div>
+                <div class="news-summary">'주말 핼러윈' 인파 관리 비상…경찰 7천8백여 명 투입 오늘(31일) 핼러윈 데이를 맞아 이태원과 홍대에 많은 인파가 몰릴 것으로 예상됩니다. 경찰은 전국 중점 관리 지역 28곳에 7천8백여 명의 인력을...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>4시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.voakorea.com/a/8217030.html" target="_blank" rel="noopener">
+                <div class="news-headline">[한국은 지금] 한국 ‘국민 아버지’ 배우 최불암 별세…12·3 계엄 관련...</div>
+                <div class="news-summary">진행자1) 한국 내 주요 뉴스를 전해 드리는 한국은 지금 시간입니다. 김현숙 기자와 함께합니다. 안녕하세요.기자) 안녕하세요.진행자1) 오늘은 어떤 소식인가요?기자) 한국에서 오랜 세월 크게 사랑을 받아 온...</div>
+                <div class="news-meta"><span class="source">VOAKOREA</span><span>·</span><span>5시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.voakorea.com/a/8217026.html" target="_blank" rel="noopener">
+                <div class="news-headline">한국 국정원 “북한, 600㎜ 초대형 방사포 전방 배치 가능성 주시”</div>
+                <div class="news-summary">진행자) 북한 주요 뉴스의 배경과 의미를 살펴보는 쉬운 뉴스, 흥미로운 소식, 뉴스 동서남북입니다. 최원기 기자와 함께합니다. 최 기자, 오늘은 어떤 소식이 있습니까?기자) 오늘은 북한이 600㎜ 초대형...</div>
+                <div class="news-meta"><span class="source">VOAKOREA</span><span>·</span><span>6시간 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">II.</span>
+          <div>
+            <div class="cat-name">정치<span class="han">政治</span></div>
+            <div class="cat-en">Politics</div>
+          </div>
+        </div>
+        <span class="cat-icon">⬢</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/656/0000191075?sid=100" target="_blank" rel="noopener">
+                <div class="news-headline">국힘 &quot;장경태, 의원직 사퇴해야… 민주당도 제명 동참&quot;</div>
+                <div class="news-summary">국민의힘이 31일 성추행 및 2차 가해 혐의로 재판에 넘겨진 장경태 무소속 의원의 국회의원직 사퇴를... 그는 &quot;검찰청을 폐지하고 공소청을 신설해 더는 표적·하명·정치적 수사라는 말이 쓰이지 않게 하겠다며...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>1분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/055/0001399598?sid=100" target="_blank" rel="noopener">
+                <div class="news-headline">'방산 빅4' 일제히 '52주 최저가 터치…순식간에 108조 증발 [취재파일]</div>
+                <div class="news-summary">항공과 거리가 먼 낙하산이 정치권력의 후원으로 KAI 대표이사에 앉고, 낙하산 대표이사는 정치에 진 빚을... 국회 보좌관 출신들도 LIG D&amp;A에 둥지를 틀고 세력을 넓히고 있습니다. 대개가 구본상 회장의...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>2분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="http://www.jeonmin.co.kr/news/articleView.html?idxno=449631" target="_blank" rel="noopener">
+                <div class="news-headline">이성윤, 검찰·신천지 의혹에 정치력 집중…전북 현안은 어디에</div>
+                <div class="news-summary">다만 지역민이 선출한 국회의원에게는 중앙정치 현안에 대응하는 역할뿐 아니라 지역의 예산과 일자리, 산업 기반을 확보해야 할 책임도 함께 주어져 있다. 여당 최고위원인 이 의원이 전북 발전을 위해 어떤 예산을...</div>
+                <div class="news-meta"><span class="source">JEONMIN</span><span>·</span><span>2분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://news.cpbc.co.kr/article/1176719?division=NAVER" target="_blank" rel="noopener">
+                <div class="news-headline">민주당 김남희, 전국여성위원장 출마…&quot;2030 여성 목소리 적극 반영하겠...</div>
+                <div class="news-summary">김 의원은 29일 서울 여의도 국회에서 CPBC 취재진과 만나 &quot;당내 여성의 정치 참여를 확대하고 2030 여성들의 목소리를 적극 반영하겠다&quot;는 포부를 밝혔다. 민주당 경찰개혁추진단 공동단장을 맡고 있는 김 의원은...</div>
+                <div class="news-meta"><span class="source">CPBC</span><span>·</span><span>14분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">III.</span>
+          <div>
+            <div class="cat-name">AI·테크<span class="han">技術</span></div>
+            <div class="cat-en">AI & Tech</div>
+          </div>
+        </div>
+        <span class="cat-icon">◎</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/009/0005756916?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">“52년 만에 최악의 하루”…주가 29% 폭락 인텔, 시총 183조원 증발</div>
+                <div class="news-summary">장기화하는 PC 시장 부진은 인공지능(AI) 사업 확대로 실적 회복을 추진해 온 립부 탄 최고경영자(CEO)의 전략에도 부담이 되고 있다. 인텔은 이번 분기 조정 주당순이익(EPS)을 25센트, 매출을...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>1분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="http://www.hansbiz.co.kr/news/articleView.html?idxno=878351" target="_blank" rel="noopener">
+                <div class="news-headline">기술주에 흔들린 뉴욕증시 '급락'</div>
+                <div class="news-summary">30일(현지시간) 뉴욕증시는 알파벳·아마존·인텔의 부진한 실적과 전망에 인공지능(AI)투자 수익성 우려가 다시 부각되면서 나스닥이 2.86% 급락했고, 인텔이 28.58% 폭락하는 등 반도체주가 직격탄을...</div>
+                <div class="news-meta"><span class="source">HANSBIZ</span><span>·</span><span>2분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/028/0002830077?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">AI에 덜 쓴 애플이 웃었다…엔비디아 끌어내리고 시총 1위 탈환</div>
+                <div class="news-summary">인공지능(AI) 인프라 투자를 둘러싼 우려가 다시 커지면서 미국 뉴욕증시 주요 지수가 일제히 하락했다. 인공지능 투자 경쟁에서 한발 물러서 있던 애플은 엔비디아를 제치고 세계 시가총액 1위에 복귀했다. 30일...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>2분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.greened.kr/news/articleView.html?idxno=353549" target="_blank" rel="noopener">
+                <div class="news-headline">13년 만에 '물가 2%' 닿은 일본은행…금리는 1.25% 동결, &quot;달성 선언은 ...</div>
+                <div class="news-summary">일본은행은 올해 6월과 9월 두 차례 금리를 0.25%포인트씩 올렸고, 특히 지난달에는 유가 오름세와 엔화 약세(엔저), 인공지능(AI) 관련 수요 확대가 물가를 밀어 올릴 수 있다고 보고 '1% 정도'였던 금리를...</div>
+                <div class="news-meta"><span class="source">GREENED</span><span>·</span><span>3분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">IV.</span>
+          <div>
+            <div class="cat-name">부동산<span class="han">不動産</span></div>
+            <div class="cat-en">Real Estate</div>
+          </div>
+        </div>
+        <span class="cat-icon">⌂</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/009/0005756912?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">“재건축 소식에 집값 좀 뛰었거든요”…강남 아파트로 눈돌리는 분당 ...</div>
+                <div class="news-summary">1일 한국부동산원 자료에 지난달 19일 기준 분당구 아파트값은 작년 10월 20일 대비 22.3% 올라 전국에서 상승률이 가장 높았다. 이런 가운데 올해 들어 9월까지 서울 집합건물을 매수한 경기·인천 거주자는...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>13분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://m.entertain.naver.com/article/213/0001406640" target="_blank" rel="noopener">
+                <div class="news-headline">'子 외도 사과' 홍서범, 재산 손해 봤다…김구라 &quot;상가 구매→고양시와...</div>
+                <div class="news-summary">가수 홍서범이 일산에서 부동산으로 적지 않은 손해를 봤다는 이야기가 전해졌다. 지난 26일 김구라의... 그 역시 잠깐 들어갔다 팔면 웃돈을 남길 수 있다는 말에 일산 아파트에 들어갔다. 그러나 &quot;중도금 다 생으로...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>15분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/015/0005348746?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">재건축 아파트값 '억' 소리나게 떨어져…몸테크 열풍 끝? [이슬기의 새집...</div>
+                <div class="news-summary">남혁우 우리은행 부동산연구원은 &quot;강남 재건축 아파트 주인 중에는, 예를 들어 과거 3억원에 사서 현재 50억원이 됐지만 별다른 소득이 없는 고령층도 많다&quot;며 &quot;실거주 중심의 세제 개편으로 장특공제 한도 축소와...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>15분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/001/0016413186?sid=103" target="_blank" rel="noopener">
+                <div class="news-headline">[신간] 돈과 투자의 심리학…'김원장 기자의 투자하는 마음'</div>
+                <div class="news-summary">2014년 10억원 정도였던 압구정동 34평 아파트가 지난해 70억원을 넘었다. 2008년 미분양된 반포 30평대 아파트는... 기본적인 개념과 원리부터 주식, 채권, 부동산 등 투자 대상의 이면까지 현명한 투자를...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>36분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">V.</span>
+          <div>
+            <div class="cat-name">주식·금융<span class="han">金融</span></div>
+            <div class="cat-en">Markets</div>
+          </div>
+        </div>
+        <span class="cat-icon">⟁</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://www.ntoday.co.kr/news/articleView.html?idxno=130492" target="_blank" rel="noopener">
+                <div class="news-headline">증시 꺾이자 증권 계열사 '급제동'…금융지주 순익 증가세 '주춤'</div>
+                <div class="news-summary">국내 증시 하락과 거래 위축이 증권사 실적에 영향을 미쳤다. 코스피는 6월 22일 종가 기준 9114.55로 고점을 기록한 뒤 3분기 중 6000선 아래까지 하락하기도 했다. 같은 기간 국내 증시 일평균...</div>
+                <div class="news-meta"><span class="source">NTODAY</span><span>·</span><span>31분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/018/0006400626?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">&quot;한 주 새 3000억 몰렸다&quot;…서학개미 픽한 '의외의 종목'</div>
+                <div class="news-summary">최근 코스피가 6000선을 중심으로 급등락을 반복하는 가운데, 지수 상승에 베팅하는 레버리지 상장지수펀드(ETF)로 자금이 대거 쏠렸다. 같은 기간 국내 증시를 이탈한 ‘서학개미’의 미국 주식 순매수액은...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>35분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/003/0014291916?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">실적 좋아도 흔들리는 국장…&quot;포트폴리오 다변화가 답&quot;</div>
+                <div class="news-summary">국내 증시가 기업들의 호실적에도 높은 변동성을 보이자 투자자들의 불안이 커지고 있다. 전문가들은... 이날 코스피 지수는 전장보다 206.92포인트(3.48%) 내린 5730.74로 장을 마쳤다. 지수는 전...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>43분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/586/0000141297?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">2030이 '국장'에 던지는 마지막 경고 [이동수의 세대 진단]</div>
+                <div class="news-summary">지난해 초 코스피 지수는 2000대였다. 대선 땐 5000도 허황된 숫자라 여겨졌다. 지금 5000이면 폭락이다. 그만큼 한국 증시는 성장했다. 이재명 정부는 집권 전부터 상법 개정에 각별한 노력을 기울였다....</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>47분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">VI.</span>
+          <div>
+            <div class="cat-name">경제<span class="han">經濟</span></div>
+            <div class="cat-en">Economy</div>
+          </div>
+        </div>
+        <span class="cat-icon">$</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/421/0009262044?sid=104" target="_blank" rel="noopener">
+                <div class="news-headline">美 루비오 언급한 '中 서해', 韓 발표엔 한 줄도 없었다</div>
+                <div class="news-summary">비자 문제는 한국 발표에만…경제안보도 표현 수위 달라 외교부 보도자료에만 담긴 내용도 있다. 외교부는 조 장관이 루비오 장관과 별도로 환담하고 양국 관계와 고위급 교류, 최근 논란이 된 정치인 비자 문제 등을...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>44분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/001/0016413168?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">[전국 주요 신문 톱뉴스](31일 조간)</div>
+                <div class="news-summary">北 드론 전력 과시, 韓GP·美탱크 모형 '쾅쾅' ▲ 매일경제 = &quot;은마 480억 땅, 한보家에 소유권&quot; … 재건축 암초 ▲ 서울경제 = 월세 준 1주택, 더 센 '3중 청구서' 온다 ▲ 한국경제 = '홀로움'이...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>47분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/001/0016413169?sid=110" target="_blank" rel="noopener">
+                <div class="news-headline">[주요 신문 사설](31일 조간)</div>
+                <div class="news-summary">정책 제대로 펴겠나 ▲ 한국경제 = '역대 최대' 821조 예산 심사 … 국회, 선심성 사업 걸러내길 내년 신고포상금 8배 … 공익 취지 살리되 부작용도 살펴야 9월 산업활동 좋아졌다고 경기회복 낙관해선 안돼...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>47분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.mediapen.com/news/view/1134086" target="_blank" rel="noopener">
+                <div class="news-headline">[미디어펜 창간 15주년 특별기획⑤] AI가 키운 전력시장…국내 기업, 변...</div>
+                <div class="news-summary">AI 혁명이 만들어낸 새로운 시장에서 전력산업이 한국 경제의 또 다른 성장동력으로 부상하고 있다. 다만 AI 데이터센터 투자가 빠르게 확대되는 가운데 전력 수요 증가에 맞춰 공급 인프라를 적기에 확충하는 것이...</div>
+                <div class="news-meta"><span class="source">MEDIAPEN</span><span>·</span><span>57분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">VII.</span>
+          <div>
+            <div class="cat-name">국제·외교<span class="han">外交</span></div>
+            <div class="cat-en">International</div>
+          </div>
+        </div>
+        <span class="cat-icon">◐</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://www.youthdaily.co.kr/news/article.html?no=229168" target="_blank" rel="noopener">
+                <div class="news-headline">주유소 기름값 24주 연속 하락…휘발유 ℓ당 1천855.7원</div>
+                <div class="news-summary">전주 대비 휘발유·경유 0.4원씩 하락…서울 1천901.3원·대구 1천827.3원 국제유가 상승에도 중동 외교... ℓ당 휘발유 1천784원, 경유 1천773원, 등유 1천380원으로 유지된다. 서울 시내의 한...</div>
+                <div class="news-meta"><span class="source">YOUTHDAILY</span><span>·</span><span>13분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/052/0002426442?sid=104" target="_blank" rel="noopener">
+                <div class="news-headline">미국 중간선거 D-3일...한반도에 미칠 영향은?</div>
+                <div class="news-summary">뉴스와이드] 명시해주시기 바랍니다. 미국 중간선거가 사흘 앞으로 다가왔습니다. 이번 선거의 결과는 외교... 그러면 국제 유가 올라가는 거 개의치 않겠다. 그러니까 선거가 끝나면 경제는 더 어려워질 수 있다는...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>16분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/001/0016413199?sid=103" target="_blank" rel="noopener">
+                <div class="news-headline">[연합뉴스 이 시각 헤드라인] - 10:30</div>
+                <div class="news-summary">글로벌 미디어들은 국제사회의 제재로 고립된 북한이 정권 유지에 필요한 자금을 확보하기 위해... 전문보기: https://www.yna.co.kr/view/AKR20261030148700004 ■ 한미일 외교장관...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>17분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/422/0000921459?sid=100" target="_blank" rel="noopener">
+                <div class="news-headline">다음 달로 다가온 '中선전 APEC'…북미 접촉 가능성은</div>
+                <div class="news-summary">&lt;이상숙 / 국립외교원 교수&gt; &quot;북미정상회담의 가능성이 있었다면 북중정상회담이 있었을 겁니다. 북미정상회담으로 가기까지는 아직까지는 북중 관계가 그렇게 긴밀하지 않은 것 같다…&quot; 미국의 싱크탱크 전략국제문제...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>22분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">VIII.</span>
+          <div>
+            <div class="cat-name">사회·사건<span class="han">社會</span></div>
+            <div class="cat-en">Society</div>
+          </div>
+        </div>
+        <span class="cat-icon">▤</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/082/0001404943?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">백인 신부가 구출한 수백 명의 한국 아이들[김백상의 레알 4편 1부]</div>
+                <div class="news-summary">언제나 어디선가 사건과 사고가 일어납니다. 일부만이 세상에 알려져 역사로 기록됩니다. 산업화 이후... 1961년 들어선 박정희 군사정부는 사회정화 사업으로 부랑자 단속 정책을 펼쳤다. 이에 부산시는 부랑자...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>53분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.businesspost.co.kr/BP?command=article_view&amp;num=450834" target="_blank" rel="noopener">
+                <div class="news-headline">[Who Is ?] 최종양 이랜드그룹 대표이사 부회장</div>
+                <div class="news-summary">2025년 10월23일 이사회에서 매각을 결정했으며, 2026년 6월 말에도 해당 부동산을 매각예정자산으로... ◆ 사건사고 이랜드 글로벌 R&amp;D센터 전경 &lt;이랜드그룹&gt; △계열사 출자 한강버스, 재정지원 논란과...</div>
+                <div class="news-meta"><span class="source">BUSINESSPOST</span><span>·</span><span>1시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.businesspost.co.kr/BP?command=article_view&amp;num=450772" target="_blank" rel="noopener">
+                <div class="news-headline">[Who Is ?] 박유신 BS한양 대표이사 사장</div>
+                <div class="news-summary">BS한양 이사회는 2026년 6월30일 기준 사내이사 6명으로 구성됐으며 박유신이 이사회 의장을 겸직하고... ◆ 사건사고 전남 해남에 조성 중인 '솔라시도' 전경. &lt; BS한양 &gt; △솔라시도 개발 특혜 의혹...</div>
+                <div class="news-meta"><span class="source">BUSINESSPOST</span><span>·</span><span>3시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/015/0005348714?sid=103" target="_blank" rel="noopener">
+                <div class="news-headline">재산 싸움이 만든 혈육의 비극…바그너 '라인의 황금'의 통찰 [오페라 사...</div>
+                <div class="news-summary">&quot; 조동균 기자 100~200년 전 탄생한 명작 오페라에는 오늘의 사건사고를 보는 듯한 비극이 담겨 있습니다. 스토킹과 교제살인, 빈곤과 계급 갈등, 가짜뉴스와 권력 남용까지. &lt;오페라 사회학&gt;은 시대를 넘어...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>4시간 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">IX.</span>
+          <div>
+            <div class="cat-name">법률·판결<span class="han">法律</span></div>
+            <div class="cat-en">Law</div>
+          </div>
+        </div>
+        <span class="cat-icon">⚖</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://www.bbc.com/korean/articles/c3y0e2117512o?xtor=AL-73-%5Bpartner%5D-%5Bnaver%5D-%5Bheadline%5D-%5Bkorean%5D-%5Bbizdev%5D-%5Bisapi%5D" target="_blank" rel="noopener">
+                <div class="news-headline">미국서 부정투표 '만연' 주장한 트럼프…실제 사례는 극히 드물어</div>
+                <div class="news-summary">헤리티지재단 데이터베이스에 따르면, 2005년부터 2025년까지 비시민권자가 불법 투표로 유죄 판결을 받은 사례는 총 24건이었다. 2026년 로이터 통신이 연방법원에 제기된 비시민권자 투표 사건을 분석한...</div>
+                <div class="news-meta"><span class="source">BBC</span><span>·</span><span>23분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/448/0000648110?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">약식명령 불복해 재판 청구했다 취업제한까지…대법 &quot;문제없어&quot;</div>
+                <div class="news-summary">31일 법조계에 따르면 대법원 2부(주심 오경미 대법관)는 최근 준강제추행 혐의로 기소된 A씨에게 벌금 500만원을 선고하고 아동·청소년 및 장애인 관련 기관에 5년간 취업제한을 명령한 원심판결을 확정했다. A씨는...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>26분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/052/0002426438?sid=102" target="_blank" rel="noopener">
+                <div class="news-headline">'59만 원 리베이트' 종근당, 2심에서 '판매정지 3개월' 취소</div>
+                <div class="news-summary">서울고등법원은 지난 28일 종근당이 식약처장을 상대로 낸 의약품 판매업무정지처분 취소소송에서 원고 일부 승소로 판결했습니다. 재판부는 판매 정지 품목들의 연 매출 합계가 150억 원에 달해 회사의 불이익이...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>29분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/421/0009262049?sid=104" target="_blank" rel="noopener">
+                <div class="news-headline">美법원, 트럼프 '캘리포니아주 우편투표 개표 중단' 시도에 또 제동</div>
+                <div class="news-summary">이번 판결로 인해 중간선거를 코앞에 두고 연방 대법원에서 공방전이 벌어질 가능성이 제기되고 있다. 미국 헌법상 선거 관리 권한은 각 주 정부에 부여된다. 트럼프 행정부는 그동안 주 정부들이 선거 부정 방지에...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>39분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">X.</span>
+          <div>
+            <div class="cat-name">생활·날씨<span class="han">生活</span></div>
+            <div class="cat-en">Life</div>
+          </div>
+        </div>
+        <span class="cat-icon">✿</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://www.gokorea.kr/news/articleView.html?idxno=883430" target="_blank" rel="noopener">
+                <div class="news-headline">비채온, 겨울철 실내운동 수요 겨냥 '에이플러스바디' 활용 확대 추진</div>
+                <div class="news-summary">관련 정보 전달을 이어갈 예정이다. 제품의 실제 활용 방식과 특장점을 직관적으로 전달해 소비자의 이해를 돕는다는 구상이다. 비채온 김미경 회장은 &quot;겨울철에는 날씨와 생활환경의 변화로 운동을 꾸준히 이어가기...</div>
+                <div class="news-meta"><span class="source">GOKOREA</span><span>·</span><span>23시간 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/014/0005594695?sid=105" target="_blank" rel="noopener">
+                <div class="news-headline">&quot;포털·TV·생활 서비스 하나로 묶어… 일상 속 AI 경험 확장&quot; ['모두의 ...</div>
+                <div class="news-summary">날씨와 생활 정보, 주식, 인물, 콘텐츠 등을 자연어로 물었을 때 여러 사이트를 방문하지 않고 필요한 정보를 확인할 수 있는지 살핀다. 출처가 제대로 제시되는지와 정보를 한눈에 이해하기 쉬운지도 검증 대상이다....</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>4일 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.wikileaks-kr.org/news/articleView.html?idxno=193603" target="_blank" rel="noopener">
+                <div class="news-headline">KT, '모두의 AI' 앞세워 생활 플랫폼 연결 확대</div>
+                <div class="news-summary">날씨와 생활정보, 주식, 인물, 콘텐츠 등에 관한 질문에 자연어로 답변하는 방식이다. 초기 서비스가 정보 제공에 집중한다면, 향후에는 기존 생활 플랫폼에서 AI를 직접 활용할 수 있도록 기능을 확대한다. KT가...</div>
+                <div class="news-meta"><span class="source">WIKILEAKS-KR</span><span>·</span><span>10월 22일</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.dynews.co.kr/news/articleView.html?idxno=869932" target="_blank" rel="noopener">
+                <div class="news-headline">AI가 지키는 충주의 밤, 관제·스마트 안전망 확대…충주시, CCTV 기반 도...</div>
+                <div class="news-summary">충주시가 스마트시티 플랫폼 확대의 일환으로 시민들에게 컴퓨터와 스마트폰으로 제공하는 재난과 실시간 교통상황, 날씨 등 생활 밀착형 정보 초기화면. ■ 스마트시티 통합플랫폼 활용 확대…재난·교통·방역...</div>
+                <div class="news-meta"><span class="source">DYNEWS</span><span>·</span><span>10월 19일</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">XI.</span>
+          <div>
+            <div class="cat-name">문화·엔터<span class="han">文化</span></div>
+            <div class="cat-en">Culture</div>
+          </div>
+        </div>
+        <span class="cat-icon">♬</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/014/0005597335?sid=103" target="_blank" rel="noopener">
+                <div class="news-headline">최수종·임형주·윤일상 등 故 최불암 추모…&quot;따뜻한 아버지로 기억&quot;</div>
+                <div class="news-summary">배우 최불암이 세상을 떠난 뒤 연예계 동료와 후배들이 추모 글을 올리며 고인을 기렸다. 31일 문화계에 따르면 최수종과 임형주, 윤일상 등은 전날인 30일 사회관계망서비스(SNS)에 각자의 기억과 애도의 뜻을 담은...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>36분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://m.entertain.naver.com/article/433/0000131906" target="_blank" rel="noopener">
+                <div class="news-headline">&quot;67년간 국민 곁을 지킨 배우&quot;…故 최불암, 정계·예술계 추모</div>
+                <div class="news-summary">문화·예술계와 정계를 아우르는 조문 행렬이 이어졌다. 특히 연예계 동료와 후배들은 비통함을 감추지 못했다. 배우 나문희는 &quot;우리의 자랑이었는데…&quot;라며 &quot;이렇게 먼저 가서 마음 한구석이 많이 섭섭하다. 추억이...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>43분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://m.entertain.naver.com/article/440/0000050798" target="_blank" rel="noopener">
+                <div class="news-headline">'혼인신고' 승리·'불륜 의혹' 양홍원·'추모' 최불암·'코스프레' 도경...</div>
+                <div class="news-summary">편집자주: 매주 연재되는 [위클리] 시리즈는 티브이데일리 취재 기자들이 한 주 동안 연예계를 달군 인물... 빈소를 찾은 배우 신구, 최수종, 차인표 등을 비롯해 이재명 대통령, 유인촌 전 문화체육관광부 장관...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>45분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.cbci.co.kr/news/articleView.html?idxno=621700" target="_blank" rel="noopener">
+                <div class="news-headline">[고(故) 최불암 별세] '국민 아버지'...김혜자 등 전원일기 가족들 빈소...</div>
+                <div class="news-summary">위해 문화·예술계, 정계, 경찰 등 각계 인사들의 조문이 이어졌다. 고인의 장례는 초록우산... 연예계 동료와 후배들 역시 깊은 애도를 표했다. 나문희는 지인의 부축을 받으며 빈소를 찾아 &quot;우리의 자랑이었는데...</div>
+                <div class="news-meta"><span class="source">CBCI</span><span>·</span><span>45분 전</span></div>
+              </a>
+            </div>
+    </article>
+    <article class="category">
+      <header class="cat-header">
+        <div class="cat-title">
+          <span class="cat-num">XII.</span>
+          <div>
+            <div class="cat-name">헬스·과학<span class="han">健康</span></div>
+            <div class="cat-en">Health</div>
+          </div>
+        </div>
+        <span class="cat-icon">✚</span>
+      </header>
+      
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/022/0004171282?sid=105" target="_blank" rel="noopener">
+                <div class="news-headline">과일·채소 껍질·씨에 식이섬유 더 많다…버리는 부위 활용해야</div>
+                <div class="news-summary">의료·식품업계에 따르면 영국 킹스 칼리지 런던(KCL) 레이철 깁슨 교수팀은 국제학술지 ‘국제 식품과학... ◆ 식이섬유 부족에 음식물 쓰레기까지…활용법 주목 식이섬유는 소화기 건강을 유지하는 데 중요한 영양...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>4분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/008/0005434592?sid=101" target="_blank" rel="noopener">
+                <div class="news-headline">AI 영상제작툴부터 암 진단솔루션까지…과기대 학생창업가의 도전</div>
+                <div class="news-summary">&quot;피드백만 주면 AI가 다음편 제작&quot; 구독자 317만 엘바, B2B 뚫는다 학생창업 부문 결선팀-울산과학기술원(UNIST)... 2029년에는 새로운 인허가와 건강보험 수가 체계를 확보한다는 목표다. 창업팀의...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>17분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://n.news.naver.com/mnews/article/018/0006400620?sid=100" target="_blank" rel="noopener">
+                <div class="news-headline">[이종일의 의원탐구]⑦박상현 &quot;경기도 복지, 직권신청 도입해야&quot;</div>
+                <div class="news-summary">박상현(49·부천2선거구·더불어민주당) 경기도의회 미래과학협력위원회 부위원장은 서울대 대학원에서... 직권주의가 도입되면 학교 무상급식이나 국민건강보험공단의 보험급여 지급처럼 당사자가 별도의 신청 없이...</div>
+                <div class="news-meta"><span class="source">네이버뉴스</span><span>·</span><span>46분 전</span></div>
+              </a>
+            </div>
+            <div class="news-item">
+              <a href="https://www.thepublic.kr/news/articleView.html?idxno=324466" target="_blank" rel="noopener">
+                <div class="news-headline">LG생활건강 프라엘, '피부과학 자문단' 발족… 홈 뷰티 기기 연구 협력</div>
+                <div class="news-summary">LG생활건강의 뷰티 기기 브랜드 LG 프라엘이 피부과학 자문단을 발족하고 홈 뷰티 기기 연구 협력에 나섰다.... 자문단은 피부과 현장에서 평균 10년 이상 경력을 보유한 의료진과 연구원으로 구성됐다. 기기의...</div>
+                <div class="news-meta"><span class="source">THEPUBLIC</span><span>·</span><span>1시간 전</span></div>
+              </a>
+            </div>
+    </article></section>
+</div>
+</body></html>
